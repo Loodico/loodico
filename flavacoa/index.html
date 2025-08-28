@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flavacoa — Thick Cacao for Healthy Living After 50</title>
+  <meta name="description" content="Thick, high-flavanol cacao drink crafted to support circulation, antioxidant protection and cellular repair for people 50+. Science-backed, ethically sourced." />
+
+  <!-- Schema/Product structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "The Flavacoa - High-Flavanol Cacao",
+    "description": "Thick cacao drink formulated to support circulation, antioxidant protection and cellular repair for people aged 50+.",
+    "brand": "Flavacoa",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": "29.95",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <style>
+    /* Global reset and base */
+    :root{
+      --bg:#0f1724; /* dark blue-gray */
+      --card:#0b1220;
+      --accent:#c98b5a; /* warm cocoa */
+      --muted:#9aa5b1;
+      --glass: rgba(255,255,255,0.03);
+      --max-width:1100px;
+      --radius:14px;
+      --shadow: 0 8px 30px rgba(2,6,23,0.6);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071226 0%, #0f1724 60%);color:#e6eef6}
+    .page-root{max-width:var(--max-width);margin:28px auto;padding:28px}
+
+    /* Card styles */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+
+    /* HERO */
+    #div-hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    #div-hero .hero-copy h1{font-size:40px;margin:0 0 8px;line-height:1.02}
+    #div-hero .hero-copy p{color:var(--muted);margin:0 0 18px}
+    #button-orderMain{background:var(--accent);border:none;padding:12px 18px;border-radius:10px;font-weight:600;cursor:pointer}
+    #button-orderMain:focus{outline:3px solid rgba(201,139,90,0.25)}
+
+    /* product preview */
+    #div-hero .hero-preview{display:flex;flex-direction:column;gap:12px;align-items:center}
+    #div-hero .mug{width:100%;height:300px;border-radius:12px;background:linear-gradient(180deg,#2a1b18,#1b0f0d);display:flex;align-items:center;justify-content:center;box-shadow: inset 0 6px 18px rgba(0,0,0,0.6)}
+    #div-hero .mug:after{content:'\2756';font-size:110px;opacity:0.06;color:#fff}
+    .badge{background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+
+    /* Sections */
+    #div-promise, #div-howwork, #div-taste, #div-science, #div-order, #div-footer{margin-top:22px}
+    .three-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);padding:18px;border-radius:12px}
+    .feature h4{margin:0 0 6px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Product card */
+    #div-order .product-card{display:flex;gap:18px;align-items:center}
+    .product-thumb{width:120px;height:120px;border-radius:12px;background:linear-gradient(180deg,#2a1b18,#1b0f0d);display:flex;align-items:center;justify-content:center}
+    .product-meta{flex:1}
+    .price{font-weight:700;font-size:20px}
+
+    /* Form */
+    form{display:flex;flex-direction:column;gap:10px}
+    input[type=email],select{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Modal */
+    #div-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:1200}
+    #div-modal .modal-box{width:94%;max-width:780px}
+
+    /* Footer */
+    #div-footer{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:920px){#div-hero{grid-template-columns:1fr;}
+      #div-hero .mug{height:260px}
+      .three-cols{grid-template-columns:1fr}
+      #div-footer{flex-direction:column;gap:10px}
+    }
+  </style>
+</head>
+<body>
+  <main id="div-root" class="page-root">
+
+    <!-- HERO -->
+    <section id="div-hero" class="card">
+      <div id="div-hero-copy" class="hero-copy">
+        <div id="div-badge" class="badge">Recommended for 50+</div>
+        <h1 id="h1-hero">A Cup of Chocolate That Loves You Back</h1>
+        <p id="p-hero-sub">Thick, high-flavanol cacao crafted to support circulation, antioxidant protection, and cellular repair — a daily ritual for vibrant living after 50.</p>
+        <div id="div-hero-cta">
+          <button id="button-orderMain" aria-controls="div-order-form" aria-expanded="false">Start Your 30-Day Ritual</button>
+          <button id="button-learnMore" style="margin-left:12px;background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:10px;color:var(--muted)">Learn the Science</button>
+        </div>
+      </div>
+
+      <aside id="div-hero-preview" class="hero-preview">
+        <div id="div-mug" class="mug" role="img" aria-label="Steaming mug of thick cacao">
+          <!-- decorative -->
+        </div>
+        <div id="div-hero-features" style="display:flex;gap:10px">
+          <div id="div-scoop" class="badge">High-Flavanol</div>
+          <div id="div-fair" class="badge">Ethically Sourced</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- PROMISE -->
+    <section id="div-promise" class="card">
+      <h2 id="h2-promise">Indulgence Meets Longevity</h2>
+      <p id="p-promise">We blend rare, non-alkalized high-flavanol cacao with a silky base to create a thick drink that tastes like an indulgence and performs like a wellness ritual. Designed specifically for people 50+, our formula focuses on circulation, antioxidant protection and cellular repair.</p>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="div-howwork" class="card">
+      <h3 id="h3-how">How It Works</h3>
+      <div id="div-how-grid" class="three-cols">
+        <div id="div-feature-stem" class="feature">
+          <h4 id="h4-stem">Stem Cell Support</h4>
+          <p id="p-stem">High-flavanol cacao helps mobilize vascular progenitor cells and supports tissue renewal — important for healthy circulation and tissue repair.</p>
+        </div>
+        <div id="div-feature-antiox" class="feature">
+          <h4 id="h4-antiox">Antioxidant Shield</h4>
+          <p id="p-antiox">Polyphenols and flavanols protect cells from oxidative stress — a key factor in aging.</p>
+        </div>
+        <div id="div-feature-circ" class="feature">
+          <h4 id="h4-circ">Circulation & Energy</h4>
+          <p id="p-circ">Boosted nitric oxide production supports better blood flow so nutrients and oxygen reach every cell.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TASTE -->
+    <section id="div-taste" class="card">
+      <h3 id="h3-taste">Like Drinking Silk</h3>
+      <p id="p-taste">Thick, rich and slow. We use more cacao per cup and a velvet finish so your morning ritual feels luxurious — and functional.</p>
+    </section>
+
+    <!-- SCIENCE -->
+    <section id="div-science" class="card">
+      <h3 id="h3-science">Science You Can Trust</h3>
+      <p id="p-science-lead">Selected studies show benefits for vascular function, antioxidant capacity and functional performance in older adults. We link to peer-reviewed research and summarize the findings for you.</p>
+      <div id="div-research-links" class="card" style="margin-top:12px">
+        <ul id="ul-research" class="small" aria-label="Selected research links">
+          <li id="li-research-1">Study: Cocoa flavanols improve endothelial function — <button id="button-openStudy1" class="small" style="background:transparent;border:none;color:var(--accent);cursor:pointer">Read summary</button></li>
+          <li id="li-research-2">Clinical trial: Cacao & walking performance in older adults — <button id="button-openStudy2" class="small" style="background:transparent;border:none;color:var(--accent);cursor:pointer">Read summary</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ORDER -->
+    <section id="div-order" class="card" aria-labelledby="h3-order">
+      <h3 id="h3-order">Try The Flavacoa — Starter Pack</h3>
+      <div id="div-order-main" class="product-card">
+        <div id="div-thumb" class="product-thumb" aria-hidden="true"> </div>
+        <div id="div-meta" class="product-meta">
+          <div id="div-title">The Flavacoa Starter — 30 servings</div>
+          <div id="div-desc" class="small">High-flavanol, non-alkalized cacao powder. Hint of cinnamon. No refined sugar.</div>
+        </div>
+        <div id="div-price" class="price">€29.95</div>
+      </div>
+
+      <form id="div-order-form" aria-label="Order form">
+        <label for="input-email" class="small">Email</label>
+        <input id="input-email" type="email" placeholder="you@example.com" required />
+
+        <label for="select-qty" class="small">Quantity</label>
+        <select id="select-qty" aria-label="quantity">
+          <option id="option-qty-1">1</option>
+          <option id="option-qty-2">2</option>
+          <option id="option-qty-3">3</option>
+        </select>
+
+        <div id="div-order-actions" style="display:flex;gap:10px">
+          <button id="button-addToCart" type="button">Add to Cart</button>
+          <button id="button-buyNow" type="button" style="background:var(--accent);border:none;padding:10px;border-radius:10px;color:#0b1220">Buy Now</button>
+        </div>
+        <div id="div-order-msg" class="small" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="div-footer" class="card">
+      <div id="div-footer-left">© <span id="span-year">2025</span> The Flavacoa</div>
+      <div id="div-footer-right">Contact: <a id="a-contact" href="mailto:hello@velvetcup.example">hello@velvetcup.example</a></div>
+    </footer>
+
+  </main>
+
+  <!-- Modal for research / details -->
+  <div id="div-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div id="div-modal-box" class="modal-box card" tabindex="-1">
+      <button id="button-modal-close" style="float:right;background:transparent;border:none;color:var(--muted);font-size:18px">✕</button>
+      <h4 id="h4-modal-title">Study Summary</h4>
+      <div id="div-modal-content" class="small" style="margin-top:8px;color:var(--muted)"></div>
+    </div>
+  </div>
+
+  <script>
+    /*************************************************************************
+     * Single-file landing page JS
+     * Every interactive element has a unique ID for debugging and testing.
+     * Behavior provided: CTA, modal display, order form validation, console logging.
+     *************************************************************************/
+
+    // Utility - log wrapper for easier debugging
+    const logger = {
+      info: (...args) => { console.log('[VelvetCup][info]', ...args) },
+      warn: (...args) => { console.warn('[VelvetCup][warn]', ...args) },
+      error: (...args) => { console.error('[VelvetCup][error]', ...args) }
+    };
+
+    // Elements
+    const elButtonOrderMain = document.getElementById('button-orderMain');
+    const elButtonLearnMore = document.getElementById('button-learnMore');
+    const elOrderForm = document.getElementById('div-order-form');
+    const elInputEmail = document.getElementById('input-email');
+    const elSelectQty = document.getElementById('select-qty');
+    const elButtonAddToCart = document.getElementById('button-addToCart');
+    const elButtonBuyNow = document.getElementById('button-buyNow');
+    const elOrderMsg = document.getElementById('div-order-msg');
+    const elModal = document.getElementById('div-modal');
+    const elModalContent = document.getElementById('div-modal-content');
+    const elModalClose = document.getElementById('button-modal-close');
+    const elButtonOpenStudy1 = document.getElementById('button-openStudy1');
+    const elButtonOpenStudy2 = document.getElementById('button-openStudy2');
+
+    // CTA - scrolls to order form and focuses input
+    elButtonOrderMain.addEventListener('click', (e) => {
+      logger.info('Primary CTA clicked');
+      document.getElementById('div-order').scrollIntoView({behavior:'smooth'});
+      setTimeout(()=> elInputEmail.focus(), 600);
+      elButtonOrderMain.setAttribute('aria-expanded','true');
+    });
+
+    // Learn more - show modal
+    elButtonLearnMore.addEventListener('click', () => {
+      openModal('Science & Summaries', 'We summarize peer-reviewed studies that show vascular and functional benefits of high-flavanol cacao in older adults. Links and PDF summaries will be included here.');
+    });
+
+    // Modal functions
+    function openModal(title, htmlContent){
+      document.getElementById('h4-modal-title').textContent = title;
+      elModalContent.innerHTML = '<p>' + htmlContent + '</p>';
+      elModal.style.display = 'flex';
+      elModal.setAttribute('aria-hidden','false');
+      // trap focus simply
+      document.getElementById('div-modal-box').focus();
+      logger.info('Modal opened:', title);
+    }
+    function closeModal(){
+      elModal.style.display = 'none';
+      elModal.setAttribute('aria-hidden','true');
+      logger.info('Modal closed');
+    }
+    elModalClose.addEventListener('click', closeModal);
+    elModal.addEventListener('click', (ev)=>{ if(ev.target === elModal) closeModal(); });
+
+    // Study buttons - demo content. Replace or enhance with actual links.
+    elButtonOpenStudy1.addEventListener('click', ()=>{
+      openModal('Study: Cocoa flavanols & endothelial function', 'Clinical and mechanistic studies show flavanol-rich cocoa improves endothelial function and nitric oxide bioavailability which supports vascular health. We recommend linking to the PubMed summary and a short plain-language summary here.');
+    });
+    elButtonOpenStudy2.addEventListener('click', ()=>{
+      openModal('Trial: Cacao & walking performance in older adults', 'A trial in older adults showed improvements in walking distance, muscle mitochondrial biomarkers and tissue perfusion with a flavanol-rich cocoa supplement. Include citation and short summary here.');
+    });
+
+    // Form simulators - these are placeholders. Integrate with your cart/payment provider.
+    function validateEmail(email){
+      // Simple email regex for UX; rely on server-side validation in production
+      const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\\.,;:\s@\"]+\.)+[^<>()[\]\\.,;:\s@\"]{2,})$/i;
+      return re.test(String(email).toLowerCase());
+    }
+
+    elButtonAddToCart.addEventListener('click', ()=>{
+      const email = elInputEmail.value.trim();
+      if(!validateEmail(email)){
+        elOrderMsg.textContent = 'Please enter a valid email to add to cart.';
+        elInputEmail.focus();
+        logger.warn('Invalid email on add to cart', email);
+        return;
+      }
+      const qty = Number(elSelectQty.value) || 1;
+      // Simulate cart action
+      elOrderMsg.textContent = `Added ${qty} x Starter Pack to cart — ready at checkout.`;
+      logger.info('Added to cart', {email, qty});
+    });
+
+    elButtonBuyNow.addEventListener('click', ()=>{
+      const email = elInputEmail.value.trim();
+      if(!validateEmail(email)){
+        elOrderMsg.textContent = 'Please enter a valid email before purchase.';
+        elInputEmail.focus();
+        logger.warn('Invalid email on buy now', email);
+        return;
+      }
+      const qty = Number(elSelectQty.value) || 1;
+      elOrderMsg.textContent = 'Processing purchase...';
+      logger.info('Initiating buy now', {email, qty});
+
+      // Replace this block with your payment provider integration (Stripe/Checkout/etc.)
+      setTimeout(()=>{
+        elOrderMsg.textContent = 'Purchase complete! Confirmation sent to ' + email;
+        logger.info('Purchase simulated success', {email, qty});
+      }, 900);
+    });
+
+    // small accessibility helper - enable keyboard close for modal
+    document.addEventListener('keydown', (ev)=>{
+      if(ev.key === 'Escape' && elModal.getAttribute('aria-hidden') === 'false'){
+        closeModal();
+      }
+    });
+
+    // Debug helper - print all IDs on the page for QA
+    function listAllIds(){
+      const all = Array.from(document.querySelectorAll('[id]')).map(el=>el.id);
+      logger.info('All element IDs on page', all);
+      return all;
+    }
+    // Expose to window for quick console checks
+    window.VelvetCup = { listAllIds };
+
+    // Initial log
+    logger.info('Landing page script loaded');
+  </script>
+</body>
+</html>
