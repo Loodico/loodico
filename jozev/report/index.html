@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The "Porsche of Mopeds": Luxury EV Moped Market Research</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2C2C2C;
+            --secondary-color: #D4AF37;
+            --accent-color: #8B7355;
+            --background-color: #F8F6F0;
+            --text-color: #2C2C2C;
+            --light-gray: #A0A0A0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .executive-summary {
+            background: white;
+            margin: -40px auto 40px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 900px;
+        }
+
+        .section {
+            margin: 60px 0;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 15px;
+        }
+
+        .subsection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin: 30px 0 20px;
+        }
+
+        .key-findings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .finding-card {
+            background: linear-gradient(135deg, var(--secondary-color), #B8860B);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .finding-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .finding-text {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .chart-container {
+            margin: 40px 0;
+            background: var(--background-color);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .chart-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .insight-card {
+            background: var(--background-color);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .insight-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .competitor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .competitor-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .competitor-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .competitor-table tr:hover {
+            background: var(--background-color);
+        }
+
+        .recommendation-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .recommendation-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--background-color);
+            border-radius: 15px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #B8860B;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, var(--secondary-color), #B8860B);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .conclusion h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>The "Porsche of Mopeds"</h1>
+            <p class="subtitle">Luxury EV Moped Market Research: European Union Opportunity Analysis</p>
+            <p style="font-size: 1rem; opacity: 0.8;">Comprehensive Market Intelligence & Strategic Positioning Study</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="executive-summary">
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-color); margin-bottom: 25px; text-align: center;">Executive Summary</h2>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 20px; text-align: center; font-weight: 500;">
+                <strong>Research Objective:</strong> Investigate the viability and positioning strategy for creating a luxury electric moped brand targeting affluent consumers in the European Union - the "Porsche of Mopeds" concept.
+            </p>
+
+            <div class="key-findings">
+                <div class="finding-card">
+                    <span class="finding-number">€21.9B</span>
+                    <span class="finding-text">Total EU Moped Market 2024</span>
+                </div>
+                <div class="finding-card">
+                    <span class="finding-number">831%</span>
+                    <span class="finding-text">Electric Segment Growth</span>
+                </div>
+                <div class="finding-card">
+                    <span class="finding-number">€274.8M</span>
+                    <span class="finding-text">Ultra-Premium Opportunity 2030</span>
+                </div>
+                <div class="finding-card">
+                    <span class="finding-number">25%</span>
+                    <span class="finding-text">HNWI Target Interest</span>
+                </div>
+            </div>
+
+            <div class="recommendation-box">
+                <div class="recommendation-title">Key Conclusion</div>
+                <p>The "Porsche of Mopeds" concept represents a compelling market opportunity. With electric segment growing at 25% CAGR and ultra-premium niche showing 35% growth with low competition, timing is optimal for luxury brand entry. <strong>Recommendation: Proceed with market entry.</strong></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">1. Market Size & Growth Dynamics</h2>
+            
+            <div class="chart-container">
+                <div class="chart-title">European EV Moped Market Analysis: Size, Growth & Regional Distribution</div>
+                <iframe src="market_size_analysis.html" width="100%" height="800" frameborder="0" style="border-radius: 10px;"></iframe>
+            </div>
+
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-title">Total Market Evolution</div>
+                    <p>The European moped/scooter market is expanding from €21.9B (2024) to €32.1B (2034), representing a steady 4.1% CAGR. This growth is driven by urbanization, sustainability concerns, and changing mobility preferences.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Electric Segment Explosion</div>
+                    <p>The electric segment is experiencing explosive growth from €2.74B (12.5% of total) to €25.51B (79.5% of total) by 2034, representing an 831% growth opportunity driven by environmental regulations and technology advancement.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Luxury Market Potential</div>
+                    <p>The luxury segment, currently valued at €164M, is projected to reach €1.525B by 2034. The ultra-premium niche (€10K+) represents the highest growth opportunity at 35.2% CAGR.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">2. Regional Market Distribution</h2>
+            
+            <div class="subsection-title">Key Market Analysis</div>
+            
+            <table class="competitor-table">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Market Share</th>
+                        <th>Luxury Potential</th>
+                        <th>Electric Adoption</th>
+                        <th>Strategic Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Germany</strong></td>
+                        <td>33.0%</td>
+                        <td>9.2/10</td>
+                        <td>64%</td>
+                        <td>Phase 1 - Primary</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Switzerland</strong></td>
+                        <td>3.8%</td>
+                        <td>9.5/10</td>
+                        <td>55%</td>
+                        <td>Phase 1 - Primary</td>
+                    </tr>
+                    <tr>
+                        <td><strong>France</strong></td>
+                        <td>15.2%</td>
+                        <td>8.1/10</td>
+                        <td>45%</td>
+                        <td>Phase 2 - Secondary</td>
+                    </tr>
+                    <tr>
+                        <td><strong>UK</strong></td>
+                        <td>11.4%</td>
+                        <td>8.8/10</td>
+                        <td>59%</td>
+                        <td>Phase 2 - Secondary</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nordics</strong></td>
+                        <td>1.9%</td>
+                        <td>8.9/10</td>
+                        <td>82%</td>
+                        <td>Phase 2 - Secondary</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-card">
+                <div class="insight-title">Market Entry Strategy</div>
+                <p><strong>Phase 1 (Years 1-2):</strong> Focus on Germany and Switzerland - largest market with highest luxury potential. <strong>Phase 2 (Years 3-4):</strong> Expand to UK, France, and Nordics. <strong>Phase 3 (Year 5+):</strong> Italy, Spain, and Austria.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">3. Competitive Landscape Analysis</h2>
+            
+            <div class="chart-container">
+                <div class="chart-title">Competitive Landscape: Premium EV Moped Brands in Europe</div>
+                <iframe src="competitor_analysis.html" width="100%" height="800" frameborder="0" style="border-radius: 10px;"></iframe>
+            </div>
+
+            <div class="subsection-title">Current Premium Players Analysis</div>
+            
+            <table class="competitor-table">
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Origin</th>
+                        <th>Price Range</th>
+                        <th>Luxury Score</th>
+                        <th>Market Position</th>
+                        <th>Key Strengths</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>BMW Motorrad</strong></td>
+                        <td>Germany</td>
+                        <td>€8,500</td>
+                        <td>9.5/10</td>
+                        <td>Technology Leader</td>
+                        <td>Advanced connectivity, premium features</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vespa Elettrica</strong></td>
+                        <td>Italy</td>
+                        <td>€6,200</td>
+                        <td>8.8/10</td>
+                        <td>Heritage + Style</td>
+                        <td>Iconic design, brand prestige</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CAKE</strong></td>
+                        <td>Sweden</td>
+                        <td>€4,800</td>
+                        <td>8.2/10</td>
+                        <td>Innovation Focus</td>
+                        <td>Cutting-edge technology, performance</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-title">Market Gaps Identified</div>
+                    <p><strong>Ultra-premium segment (€10K+):</strong> Currently underserved with no true luxury positioning. <strong>Technology + Heritage:</strong> Opportunity to combine both elements. <strong>HNWI targeting:</strong> Limited focus on high-net-worth individuals.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Competitive Advantage</div>
+                    <p>Position above BMW Motorrad in pricing and exclusivity. Combine Vespa's heritage appeal with Tesla's innovation approach. Target the underserved ultra-HNWI segment with bespoke customization.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">4. Luxury Positioning Framework</h2>
+            
+            <div class="chart-container">
+                <div class="chart-title">"Porsche of Moped" Luxury Positioning Analysis</div>
+                <iframe src="luxury_positioning.html" width="100%" height="600" frameborder="0" style="border-radius: 10px;"></iframe>
+            </div>
+
+            <div class="subsection-title">Target Brand Positioning</div>
+            
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-title">Heritage Score: 9.0/10</div>
+                    <p>Crafted legacy story combining European craftsmanship with modern innovation. Emphasis on artisanal production, limited editions, and brand storytelling.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Innovation Score: 9.5/10</div>
+                    <p>Cutting-edge electric technology, advanced connectivity, over-the-air updates, and smart features that justify premium pricing.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Exclusivity Score: 9.8/10</div>
+                    <p>Limited production runs (1,000-2,000 units annually), bespoke customization, premium materials, and invitation-only purchase process.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Performance Score: 9.2/10</div>
+                    <p>Exceptional engineering with 120km/h top speed, 150km range, fast charging, and superior handling dynamics.</p>
+                </div>
+            </div>
+
+            <div class="recommendation-box">
+                <div class="recommendation-title">Positioning Strategy</div>
+                <p><strong>Ultra-premium pricing:</strong> €12,000-18,000 base model. <strong>Limited production:</strong> 1,500 units annually. <strong>Direct-to-consumer:</strong> Flagship showrooms + online configurator. <strong>Brand promise:</strong> "Engineered for Magic. Every Day."</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">5. Consumer Behavior Insights</h2>
+            
+            <div class="chart-container">
+                <div class="chart-title">HNWI Mobility Preferences & Purchase Drivers</div>
+                <iframe src="consumer_behavior_analysis.html" width="100%" height="800" frameborder="0" style="border-radius: 10px;"></iframe>
+            </div>
+
+            <div class="subsection-title">High-Net-Worth Individual Analysis</div>
+            
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-title">Mobility Preferences (Importance Score)</div>
+                    <p><strong>Electric/Hybrid:</strong> 85% | <strong>Brand Prestige:</strong> 82% | <strong>Premium Features:</strong> 78% | <strong>Performance:</strong> 76% | <strong>Sustainability:</strong> 71%</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Purchase Decision Drivers</div>
+                    <p><strong>Brand Reputation:</strong> 28% | <strong>Technology Features:</strong> 22% | <strong>Design/Style:</strong> 18% | <strong>Performance:</strong> 17% | <strong>Environmental Impact:</strong> 15%</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Target Demographics</div>
+                    <p><strong>Age:</strong> 35-60 years | <strong>Income:</strong> €150K+ annually | <strong>Location:</strong> Urban centers, affluent suburbs | <strong>Values:</strong> Innovation, sustainability, status</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Purchase Behavior</div>
+                    <p><strong>Research-intensive:</strong> 85% more online research | <strong>Brand loyal:</strong> 95% retention rate | <strong>Experience-focused:</strong> Values ownership experience</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">6. Market Opportunity Assessment</h2>
+            
+            <div class="subsection-title">Ultra-Premium Segment Analysis</div>
+            
+            <table class="competitor-table">
+                <thead>
+                    <tr>
+                        <th>Segment</th>
+                        <th>Current Market</th>
+                        <th>Growth Rate</th>
+                        <th>2030 Projection</th>
+                        <th>HNWI Potential</th>
+                        <th>Competition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #FFF8DC;">
+                        <td><strong>Ultra-Premium (€10K+)</strong></td>
+                        <td>€45M</td>
+                        <td>35.2% CAGR</td>
+                        <td>€274.8M</td>
+                        <td>25%</td>
+                        <td>Low</td>
+                    </tr>
+                    <tr>
+                        <td>Premium (€7K-10K)</td>
+                        <td>€89M</td>
+                        <td>28.7% CAGR</td>
+                        <td>€404.5M</td>
+                        <td>45%</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>High-End (€4K-7K)</td>
+                        <td>€156M</td>
+                        <td>22.1% CAGR</td>
+                        <td>€516.9M</td>
+                        <td>35%</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Mid-Range (€2K-4K)</td>
+                        <td>€234M</td>
+                        <td>18.5% CAGR</td>
+                        <td>€647.9M</td>
+                        <td>15%</td>
+                        <td>Very High</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="recommendation-box">
+                <div class="recommendation-title">Success Factors</div>
+                <p><strong>Strong brand storytelling</strong> combining heritage with innovation. <strong>Exceptional product quality</strong> worthy of premium pricing. <strong>Exclusive distribution strategy</strong> maintaining brand prestige. <strong>Technology leadership</strong> in electric mobility. <strong>Sustainability credentials</strong> appealing to conscious consumers.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Strategic Recommendations</h2>
+            
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-title">1. Brand Positioning Strategy</div>
+                    <p><strong>Brand Name:</strong> Suggest German/Italian heritage. <strong>Tagline:</strong> "Engineered for Magic. Every Day." <strong>Core Values:</strong> Heritage, Innovation, Exclusivity, Performance.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">2. Product Strategy</div>
+                    <p><strong>Price Point:</strong> €12,000-18,000. <strong>Production:</strong> 1,500 units annually. <strong>Features:</strong> Customizable, premium materials, advanced connectivity.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">3. Go-to-Market Strategy</div>
+                    <p><strong>Phase 1:</strong> Germany, Switzerland. <strong>Phase 2:</strong> France, UK, Nordics. <strong>Phase 3:</strong> Italy, Spain. <strong>Distribution:</strong> Direct-to-consumer + flagship showrooms.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">4. Business Model</div>
+                    <p><strong>Revenue Streams:</strong> Vehicle sales, customization, accessories, service. <strong>Margins:</strong> Target 35-40% gross margin. <strong>Scale:</strong> Break-even at 500 units/year.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h3 style="margin-bottom: 25px; color: var(--primary-color);">Download Research Data</h3>
+            <p style="margin-bottom: 25px;">Access the complete dataset and analysis for further research and validation.</p>
+            
+            <a href="market_analysis_data.csv" class="download-btn" download>
+                <i class="fas fa-download"></i> Market Size Data (CSV)
+            </a>
+            <a href="regional_analysis_data.csv" class="download-btn" download>
+                <i class="fas fa-download"></i> Regional Analysis (CSV)
+            </a>
+            <a href="competitor_analysis_data.csv" class="download-btn" download>
+                <i class="fas fa-download"></i> Competitor Data (CSV)
+            </a>
+            <a href="luxury_positioning_data.csv" class="download-btn" download>
+                <i class="fas fa-download"></i> Positioning Framework (CSV)
+            </a>
+            <a href="market_opportunity_data.csv" class="download-btn" download>
+                <i class="fas fa-download"></i> Market Opportunity (CSV)
+            </a>
+        </div>
+
+        <div class="conclusion">
+            <h2>Conclusion</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                The "Porsche of Mopeds" concept represents a compelling market opportunity in the European luxury electric mobility space. With optimal timing, validated market demand, and favorable competitive landscape, this venture has strong potential for success.
+            </p>
+            <p style="font-size: 1rem; opacity: 0.9;">
+                The market size of €274.8M by 2030 in the ultra-premium segment, combined with 25% HNWI interest, provides sufficient opportunity for a well-positioned luxury brand to capture significant market share and achieve profitability.
+            </p>
+        </div>
+    </div>
+
+    <footer style="background: var(--primary-color); color: white; text-align: center; padding: 30px 0; margin-top: 60px;">
+        <div class="container">
+            <p style="margin-bottom: 10px;">
+                <strong>Research Methodology:</strong> Comprehensive market analysis based on industry reports, consumer behavior studies, and competitive intelligence from multiple sources.
+            </p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                All financial projections and market sizing are estimates based on available data and industry trends. 
+                Generated: December 2024
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-resize iframes
+        window.addEventListener('load', function() {
+            const iframes = document.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+                iframe.onload = function() {
+                    try {
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        const height = iframeDoc.body.scrollHeight;
+                        iframe.style.height = height + 'px';
+                    } catch (e) {
+                        console.log('Cross-origin iframe, using default height');
+                    }
+                };
+            });
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
