@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
+  <rect width="400" height="100" rx="12" fill="#071018"></rect>
+  <g transform="translate(18,18)">
+    <circle cx="40" cy="32" r="28" fill="#0ea5a4"></circle>
+    <path d="M26 32 L54 32 M40 18 L40 46" stroke="#071018" stroke-width="4" stroke-linecap="round"></path>
+    <text x="90" y="48" font-family="Verdana, Arial, sans-serif" font-size="28" fill="#e6eef6">Jozev</text>
+    <text x="90" y="74" font-family="Verdana, Arial, sans-serif" font-size="16" fill="#9ca3af">Engineering</text>
+  </g>
+</svg>
