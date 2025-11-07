@@ -3,96 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jozev Engineering | Embedded Systems & Prototyping Consultancy</title>
-<meta name="description" content="Jozev Engineering offers consulting, embedded systems development, prototyping, and small-batch manufacturing for technology-driven companies in the Netherlands and across Europe.">
-<link rel="canonical" href="https://jozevengineering.example.com/">
-<link rel="stylesheet" href="css/style.css">
+<title>Jozev Labs | Embedded Systems & Prototyping in the Netherlands</title>
+<meta name="description" content="Jozev Labs helps companies design, prototype, and launch intelligent hardware and embedded systems — from concept to pilot manufacturing.">
+<meta name="keywords" content="embedded systems, prototyping, hardware development, IoT, firmware, PCB design, Netherlands, product design, R&D consulting">
+<meta property="og:title" content="Jozev Labs — Embedded Systems & Prototyping">
+<meta property="og:description" content="From concept to prototype — hardware, firmware, and small-batch manufacturing.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1526378728410-0e97d7b5b9c0?auto=format&fit=crop&w=1600&q=70">
+<meta name="author" content="Jozev Labs">
+<style>
+:root{--accent:#0ea5a4;--muted:#9ca3af;--bg:#0b0f12;--card:rgba(255,255,255,0.03)}
+body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:#0b0f12;color:#e6eef6;line-height:1.6}
+header{background:url('https://images.unsplash.com/photo-1526378728410-0e97d7b5b9c0?auto=format&fit=crop&w=1600&q=70') center/cover no-repeat;padding:120px 20px;text-align:center}
+header h1{font-size:40px;margin:0;color:var(--accent)}
+header p{color:var(--muted);font-size:18px;margin:8px 0 20px}
+.cta{display:inline-block;background:var(--accent);color:#012;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:700}
+section{max-width:900px;margin:60px auto;padding:0 20px}
+h2{color:var(--accent)}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);padding:20px;border-radius:12px}
+footer{text-align:center;color:var(--muted);padding:40px 20px;font-size:14px;border-top:1px solid rgba(255,255,255,0.05)}
+a{color:var(--accent)}
+</style>
 </head>
 <body>
-<div class="lang-switch"><select id="lang" onchange="switchLang()"><option value="en">English</option><option value="nl">Nederlands</option></select></div>
-
-<header class="header" role="banner" style="background-image:url('https://images.unsplash.com/photo-1526378728410-0e97d7b5b9c0?auto=format&fit=crop&w=1600&q=70')">
-  <img src="assets/logo.svg" alt="Jozev Engineering logo" style="height:72px;margin-bottom:8px">
-  <div class="brand">Jozev Engineering</div>
-  <div class="subtitle" id="hero_sub">Solutions Engineering • Embedded Systems • Prototyping • Small-batch Manufacturing</div>
-  <div style="margin-top:12px"><a class="cta" href="#contact">Get a Quote / Vraag een Offerte</a></div>
+<header>
+  <h1>Jozev Labs</h1>
+  <p>From concept to prototype — embedded systems, hardware, and intelligent products.</p>
+  <a href="#contact" class="cta">Get in Touch</a>
 </header>
 
-<main class="container">
-  <section class="section" id="about">
-    <h2 class="card-title" id="about_title">About / Over</h2>
-    <p id="about_en">Jozev Engineering bridges the gap between software and hardware. We design embedded systems, build prototypes, and support small-batch production for startups, SMEs, and research teams across the Netherlands and Europe.</p>
-    <p id="about_nl" style="display:none">Jozev Engineering slaat een brug tussen software en hardware. Wij ontwerpen embedded systemen, bouwen prototypes en ondersteunen kleine serieproductie voor startups, MKB en onderzoeksteams in Nederland en Europa.</p>
-  </section>
+<section id="what">
+  <h2>What We Do</h2>
+  <div class="grid">
+    <div class="card"><h3>Embedded Systems</h3><p>We design PCBs, firmware, and embedded connectivity for intelligent devices.</p></div>
+    <div class="card"><h3>Rapid Prototyping</h3><p>3D printing, CNC machining, and laser cutting to validate concepts fast.</p></div>
+    <div class="card"><h3>Solutions Engineering</h3><p>R&D consulting, feasibility studies, and system integration planning.</p></div>
+    <div class="card"><h3>Small-Batch Manufacturing</h3><p>Pilot production runs and QA for early-stage product launches.</p></div>
+  </div>
+</section>
 
-  <section class="section" id="services">
-    <h2 class="card-title" id="services_title">Services / Diensten</h2>
-    <div class="grid">
-      <div class="service"><img src="assets/project1.jpg" alt=""><h3>Solutions Engineering</h3><p class="small">Architecture, feasibility studies, pre-sales technical validation and roadmaps.</p></div>
-      <div class="service"><img src="assets/project2.jpg" alt=""><h3>Embedded Systems</h3><p class="small">PCB design, firmware, connectivity, edge APIs and IoT integration.</p></div>
-      <div class="service"><img src="assets/workshop.jpg" alt=""><h3>Prototyping</h3><p class="small">3D printing, CNC machining, laser engraving and assembly for rapid iteration.</p></div>
-      <div class="service"><img src="assets/project1.jpg" alt=""><h3>Small-batch Manufacturing</h3><p class="small">Pilot runs, QA, and EU-compliant assembly for small series.</p></div>
-      <div class="service"><img src="assets/project2.jpg" alt=""><h3>Training & Enablement</h3><p class="small">Workshops, developer onboarding, and technical documentation.</p></div>
-      <div class="service"><img src="assets/workshop.jpg" alt=""><h3>Products</h3><p class="small">Kits, modules and tools sold online with EU shipping support.</p></div>
-    </div>
-  </section>
+<section id="process">
+  <h2>Our Process</h2>
+  <p><strong>1. Discover</strong> – Define technical goals, constraints, and success metrics.<br>
+     <strong>2. Design</strong> – Develop schematics, firmware, and CAD models.<br>
+     <strong>3. Build</strong> – Prototype and iterate quickly using in-house tools.<br>
+     <strong>4. Launch</strong> – Prepare documentation, QA, and pilot production.</p>
+</section>
 
-  <section class="section" id="projects">
-    <h2 class="card-title">Featured Projects / Projecten</h2>
-    <div class="grid">
-      <div style="padding:12px;border-radius:10px;text-align:center"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&q=60" style="width:100%;border-radius:8px"><p class="small">Prototype — Embedded sensor integration and edge processing.</p></div>
-      <div style="padding:12px;border-radius:10px;text-align:center"><img src="https://images.unsplash.com/photo-1545235617-9465b1a6a3d0?auto=format&fit=crop&w=800&q=60" style="width:100%;border-radius:8px"><p class="small">Device — Small-batch production and packaging for EU market.</p></div>
-      <div style="padding:12px;border-radius:10px;text-align:center"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=60" style="width:100%;border-radius:8px"><p class="small">Workshop — Technical enablement and developer onboarding.</p></div>
-    </div>
-  </section>
+<section id="why">
+  <h2>Why Jozev Labs</h2>
+  <ul>
+    <li>Agile R&D culture focused on real-world prototypes.</li>
+    <li>Deep embedded systems expertise — firmware to hardware.</li>
+    <li>Fast European lead times with local manufacturing partners.</li>
+    <li>Transparent consulting and technical documentation.</li>
+  </ul>
+</section>
 
-  <section class="section" id="process">
-    <h2 class="card-title">Process / Proces</h2>
-    <ol class="small">
-      <li><strong>Discover / Ontdekken</strong> — short feasibility sprint and scope.</li>
-      <li><strong>Design / Ontwerp</strong> — system architecture, CAD, PCB and firmware.</li>
-      <li><strong>Build / Bouwen</strong> — prototype and iterate quickly.</li>
-      <li><strong>Pilot / Productie</strong> — pilot runs, QA and handover to production.</li>
-    </ol>
-  </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:loodico+jozev@gmail.com">loodico+jozev@gmail.com</a><br>
+  Phone: +31 6 00000000<br>
+  LinkedIn: <a href="#">[placeholder]</a> | GitHub: <a href="#">[placeholder]</a></p>
+</section>
 
-  <section class="section" id="contact">
-    <h2 class="card-title" id="contact_title">Contact / Contact</h2>
-    <p class="small">Email: <a href="mailto:loodico@gmail.com">loodico@gmail.com</a> • Phone: +31 6 19851260</p>
-    <form onsubmit="submitForm(event)" aria-label="Contact form">
-      <input id="name" placeholder="Name / Naam" required>
-      <input id="email" placeholder="Email / E-mail" required>
-      <textarea id="message" placeholder="Message / Bericht" rows="5" required></textarea>
-      <div><button type="submit" class="cta">Send / Verstuur</button></div>
-    </form>
-  </section>
-</main>
-
-<footer class="footer">
-  <p>© 2025 Jozev Engineering — KvK: [add number] • SBI: 71.12.0, 70.20.1, 32.50.2, 47.91.2</p>
+<footer>
+  © 2025 Jozev Labs — Based in the Netherlands | SBI 71.12.0, 70.20.1, 32.50.2, 47.91.2
 </footer>
-
-<script>
-function switchLang(){
-  var v=document.getElementById('lang').value;
-  if(v==='nl'){
-    document.getElementById('about_en').style.display='none';
-    document.getElementById('about_nl').style.display='block';
-    document.getElementById('hero_sub').innerText='Solutions Engineering • Embedded systemen • Prototyping • Kleine series productie';
-  } else {
-    document.getElementById('about_en').style.display='block';
-    document.getElementById('about_nl').style.display='none';
-    document.getElementById('hero_sub').innerText='Solutions Engineering • Embedded Systems • Prototyping • Small-batch Manufacturing';
-  }
-}
-function submitForm(e){
-  e.preventDefault();
-  var name=document.getElementById('name').value || 'No name';
-  var email=document.getElementById('email').value || 'No email';
-  var message=document.getElementById('message').value || '';
-  var body=encodeURIComponent('Name: '+name+'\\nEmail: '+email+'\\n\\n'+message);
-  window.location.href='mailto:loodico@gmail?subject=Contact%20from%20Jozev%20Engineering&body='+body;
-}
-</script>
 </body>
 </html>
