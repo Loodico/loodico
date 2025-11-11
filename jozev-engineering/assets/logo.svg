@@ -1,9 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
-  <rect width="400" height="100" rx="12" fill="#071018"></rect>
-  <g transform="translate(18,18)">
-    <circle cx="40" cy="32" r="28" fill="#0ea5a4"></circle>
-    <path d="M26 32 L54 32 M40 18 L40 46" stroke="#071018" stroke-width="4" stroke-linecap="round"></path>
-    <text x="90" y="48" font-family="Verdana, Arial, sans-serif" font-size="28" fill="#e6eef6">Jozev</text>
-    <text x="90" y="74" font-family="Verdana, Arial, sans-serif" font-size="16" fill="#9ca3af">Engineering</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Jozev Labs</title>
+  <defs>
+    <style>
+      .w{fill:#e7eef0;font-family:Inter, sans-serif;font-weight:700}
+      .tag{fill:#9aa3a3;font-family:Inter, sans-serif;font-weight:500;font-size:18px}
+    </style>
+  </defs>
+
+  <!-- icon: rounded square + simple circuit trace -->
+  <rect x="0" y="0" width="160" height="160" rx="18" fill="#021212"/>
+  <g transform="translate(20,20)" stroke="#0ea5a4" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 48 L48 48 L48 12" />
+    <circle cx="90" cy="90" r="12" fill="#0ea5a4" stroke="none" />
+    <path d="M132 28 L132 132" />
+    <path d="M88 28 L132 28" />
   </g>
+
+  <!-- wordmark -->
+  <text x="190" y="78" font-size="48" class="w">Jozev Labs</text>
+  <text x="190" y="108" font-size="16" class="tag">R&D · Embedded systems · Rapid prototyping</text>
 </svg>
