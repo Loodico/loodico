@@ -1,242 +1,154 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jozev Labs — Embedded Systems & Rapid Prototyping by José Rojas</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Jozev Labs — Founded by Solutions Engineer José Rojas. Specializing in embedded systems design, firmware, and rapid prototyping for startups and OEMs across the EU." />
-  <meta name="keywords" content="Jozev Labs, rapid prototyping, embedded systems, PCB design, firmware, R&D, Netherlands, EU manufacturing" />
-  <meta name="author" content="Jozev Labs" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Jozev Labs — R&D & Rapid Prototyping" />
-  <meta property="og:description" content="Embedded systems design, PCB + firmware, rapid prototyping and local EU manufacturing support." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI-driven design and analysis for embedded and mechanical systems. On-premise infrastructure ensures client IP, data, and trademarks remain secure within the Netherlands." />
+  <meta name="keywords" content="Jozev Labs, R&D, prototyping, embedded systems, AI engineering, Netherlands, product design" />
+  <meta property="og:title" content="Jozev Labs – AI-Driven R&D and Prototyping" />
+  <meta property="og:description" content="Embedded and mechanical system design accelerated by AI. Secure, on-premise infrastructure in the Netherlands." />
   <meta property="og:image" content="assets/jozev-labs-logo.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.example/" />
-
-  <!-- Twitter card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Jozev Labs — R&D & Rapid Prototyping" />
-  <meta name="twitter:description" content="Embedded systems, PCB & firmware design, rapid prototyping and small-batch EU manufacturing." />
-  <meta name="twitter:image" content="assets/jozev-labs-logo.png" />
-
-  <!-- Favicon + manifest placeholders -->
-  <link rel="icon" href="/assets/favicons/favicon-32x32.png" sizes="32x32" />
-  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" />
-
-  <!-- Theme & accent -->
-  <meta name="theme-color" content="#0ea5a4" />
-
-  <!-- Simple, dependency-free styles -->
+  <title>Jozev Labs – AI-Driven R&D and Prototyping</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/jozev-labs-logo.png" />
+  <link rel="icon" type="image/x-icon" href="assets/jozev-labs-logo.png" />
   <style>
-    :root{
-      --bg:#0b0b0d;
-      --panel:#0f1113;
-      --muted:#9aa3a3;
-      --accent:#0ea5a4;
-      --maxW:1100px;
-      --radius:12px;
-      color-scheme: dark;
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.6;
     }
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:linear-gradient(180deg,#060607 0%, #0b0b0d 100%);
-      color:#e7eef0;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #111;
+      border-bottom: 1px solid #0ea5a4;
     }
-    .wrap{max-width:var(--maxW); margin:36px auto; padding:28px;}
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand svg{height:36px;width:36px}
-    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-size:15px}
-    nav a:hover{color:var(--accent)}
-    .hero{
-      margin-top:28px;
-      display:grid;
-      grid-template-columns:1fr 420px;
-      gap:28px;
-      align-items:center;
+    header img {
+      height: 48px;
     }
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:28px; border-radius:var(--radius); box-shadow:0 6px 18px rgba(0,0,0,0.6)}
-    h1{margin:0;font-size:28px;letter-spacing:-0.4px}
-    .eyebrow{color:var(--accent);font-weight:600;font-size:13px}
-    .lead{color:var(--muted);margin-top:10px}
-    .cta{margin-top:18px;display:flex;gap:12px}
-    .btn{background:var(--accent);color:#021212;padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
-    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-    .panel{background:var(--panel);padding:18px;border-radius:12px}
-    section{margin-top:34px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .process-step{padding:16px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);min-height:110px}
-    footer{margin-top:40px;padding:18px;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,0.02)}
-    .small{font-size:13px;color:var(--muted)}
-    .contact-list{display:flex;flex-direction:column;gap:8px}
-    .img-hero{width:100%;height:100%;border-radius:12px;object-fit:cover;display:block}
-    @media(max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
+    nav a {
+      color: #e0e0e0;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #0ea5a4;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero {
+      background: url('assets/jozev-labs-logo.png') center/contain no-repeat;
+      text-align: center;
+      padding: 8rem 2rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #0ea5a4;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #aaa;
+      border-top: 1px solid #0ea5a4;
+    }
+    .contact a {
+      color: #0ea5a4;
+      text-decoration: none;
     }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <!-- Inline SVG logo placeholder; replace with real asset or keep for fast prototyping -->
-        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-          <rect width="64" height="64" rx="10" fill="#021212"/>
-          <g transform="translate(8,8)" stroke="#0ea5a4" stroke-width="2" fill="none" stroke-linecap="round">
-            <path d="M4 16 L12 16 L12 4" />
-            <circle cx="16" cy="16" r="3" fill="#0ea5a4" stroke="none"></circle>
-            <path d="M28 8 L28 24" />
-            <path d="M20 12 L28 12" />
-          </g>
-        </svg>
-        <div>
-          <div style="font-weight:700">Jozev Labs</div>
-          <div class="small">R&D · Embedded systems · Rapid prototyping</div>
-        </div>
+  <header>
+    <img src="assets/jozev-labs-logo.png" alt="Jozev Labs Logo" />
+    <nav>
+      <a href="#what-we-do">What We Do</a>
+      <a href="#process">Our Process</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Jozev Labs</h1>
+    <p>AI-driven design and analysis for embedded and mechanical systems.<br />
+    On-premise infrastructure ensures your IP and data remain secure within the Netherlands.</p>
+  </section>
+
+  <section id="what-we-do">
+    <h2>What We Do</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="assets/jozev-labs-logo.png" alt="Embedded Systems Design" />
+        <h3>Embedded Systems Design</h3>
+        <p>We design, simulate, and prototype embedded systems with AI-assisted workflows that reduce time-to-market.</p>
       </div>
-
-      <nav>
-        <a href="#what">What We Do</a>
-        <a href="#process">Our Process</a>
-        <a href="#why">Why Us</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-      <div class="hero">
-        <div class="hero-card">
-          <div class="eyebrow">Netherlands · EU-friendly · NDA</div>
-          <h1>From PCB to production — rapid prototyping and embedded design that actually ships.</h1>
-          <p class="lead">We help startups and manufacturers test, refine, and validate hardware quickly: electronics, firmware, mechanics, and small-batch manufacturing — all under one roof.</p>
-          <div class="cta">
-            <a class="btn" href="#contact">Request consult</a>
-            <a class="btn secondary" href="#projects">View example projects</a>
-          </div>
-
-          <section id="what">
-            <h3 style="margin-top:22px">What We Do</h3>
-            <div class="grid-3" style="margin-top:12px">
-              <div class="panel">
-                <strong>Embedded systems</strong>
-                <div class="small" style="margin-top:8px">MCU selection, firmware architecture, drivers, BLE/Wi-Fi integration, and field firmware update pipelines.</div>
-              </div>
-              <div class="panel">
-                <strong>Hardware & PCB</strong>
-                <div class="small" style="margin-top:8px">Schematic capture, multilayer PCB layout, signal integrity basics, and quick-turn PCBA through trusted partners.</div>
-              </div>
-              <div class="panel">
-                <strong>Rapid prototyping</strong>
-                <div class="small" style="margin-top:8px">3D printing, CNC, vacuum casting, functional assemblies and small pilot runs with EU contract manufacturers.</div>
-              </div>
-            </div>
-          </section>
-
-          <section id="process">
-            <h3 style="margin-top:18px">Our Process</h3>
-            <div class="grid-3" style="margin-top:12px">
-              <div class="process-step">
-                <strong>1 — Discover</strong>
-                <div class="small" style="margin-top:8px">Define requirements, success metrics, constraints and regulatory targets.</div>
-              </div>
-              <div class="process-step">
-                <strong>2 — Rapid iterate</strong>
-                <div class="small" style="margin-top:8px">Fast proof-of-concept boards, firmware stubs, and mechanical mockups — iterate weekly.</div>
-              </div>
-              <div class="process-step">
-                <strong>3 — Validate</strong>
-                <div class="small" style="margin-top:8px">Field testing, compliance checklist, and transition planning for small-batch manufacturing.</div>
-              </div>
-            </div>
-          </section>
-
-          <section id="why">
-            <h3 style="margin-top:18px">Why Us</h3>
-            <ul style="margin-top:8px;color:var(--muted);">
-              <li>Embedded-first engineering: firmware and PCB design in the same sprint.</li>
-              <li>EU/local manufacturing network for fast, compliant pilot runs.</li>
-              <li>Transparent pricing and IP-safe workflows (NDA available).</li>
-            </ul>
-        </div>
-
-        <!-- right column: image & contact -->
-        <aside>
-          <img class="img-hero" src="assets/jozev-labs-logo.png" alt="Electronics prototyping workspace — Jozev Labs hero image">
-          <div class="panel" style="margin-top:14px">
-            <h4>Contact</h4>
-            <div class="contact-list" id="contact">
-              <div><strong>Email</strong>: <a href="mailto:loodico@gmail.com" style="color:var(--accent);text-decoration:none">loodico@gmail.com</a></div>
-              <div><strong>Phone</strong>: <a href="tel:+31619851260" style="color:var(--accent);text-decoration:none">+31 6 19851260</a></div>
-              <div><strong>Location</strong>: Netherlands (EU)</div>
-              <div style="margin-top:8px">
-                <a href="https://www.linkedin.com/company/your-linkedin" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">LinkedIn</a> •
-                <a href="https://github.com/your-github" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" style="margin-top:14px">
-            <h4 id="projects">Example projects</h4>
-            <div class="small" style="margin-top:8px">
-              • Battery management prototype with custom FET control and CAN bus integration. <br>
-              • BLE sensor node, five-week turnaround from concept to field prototype. <br>
-              • Industrial sensor pilot with IP-protected firmware and EU small-batch assembly.
-            </div>
-            <div style="margin-top:10px"><img style="width:100%;border-radius:8px;display:block" src="https://images.unsplash.com/photo-1555685812-4b943f1d6b5b?w=800&q=80" alt="project example"></div>
-          </div>
-        </aside>
+      <div class="card">
+        <img src="assets/jozev-labs-logo.png" alt="Mechanical Prototyping" />
+        <h3>Mechanical Prototyping</h3>
+        <p>3D-printed and CNC prototypes help validate form, fit, and function before full-scale production.</p>
       </div>
-
-      <section aria-labelledby="contactHeading" style="margin-top:28px">
-        <div class="panel">
-          <h3 id="contactHeading">Get in touch</h3>
-          <p class="small">Schedule a 30-minute scoping call. We sign NDAs and provide quick feasibility letters and time/cost estimates for projects under 2 weeks.</p>
-          <div style="display:flex;gap:12px;margin-top:12px">
-            <a class="btn" href="mailto:loodico@gmail.com">Email loodico@gmail.com</a>
-            <a class="btn secondary" href="tel:+31619851260">Call +31 6 19851260</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="about-founder" style="margin-top:28px">
-        <div class="panel">
-          <h3>About the Founder</h3>
-          <p class="small">
-            Jozev Labs was founded by <strong>José Rojas</strong>, a Solutions Engineer with over 15 years of experience leading technical programs, developer advocacy, and embedded software initiatives at global companies including <strong>TomTom</strong> and <strong>Research In Motion</strong>. 
-            His work spans mobile APIs, SDK ecosystems, and proof-of-concept hardware. José’s approach combines rapid prototyping, practical architecture, and clear communication to deliver usable results fast.
-          </p>
-          <ul class="small" style="margin-top:8px;color:var(--muted)">
-            <li>Certified Scrum Product Owner (CSPO)</li>
-            <li>System Engineer (Universidad Piloto de Colombia)</li>
-            <li>Finance Diploma (Pontificia Universidad Javeriana)</li>
-            <li>Patents in mobile UX design and interface systems</li>
-          </ul>
-          <p class="small" style="margin-top:8px">
-            Languages: English (fluent), Spanish (native), Dutch (basic)  
-            <br>LinkedIn: <a href="https://www.linkedin.com/in/jjrojas/" target="_blank" style="color:var(--accent)">linkedin.com/in/jjrojas</a>
-          </p>
-        </div>
-      </section>
-
-
-    </main>
-
-    <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
-        <div class="small">© Jozev Labs — R&D & Prototyping · Netherlands</div>
-        <div class="small">Built for speed. Built to ship.</div>
+      <div class="card">
+        <img src="assets/jozev-labs-logo.png" alt="AI Analysis" />
+        <h3>AI-Assisted Analysis</h3>
+        <p>We use machine learning to predict failure points, optimize layouts, and automate documentation.</p>
       </div>
-    </footer>
-  </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <h2>Our Process</h2>
+    <p>We work fast, transparently, and securely. From concept to prototype:</p>
+    <ul>
+      <li>Requirement capture and feasibility study</li>
+      <li>AI-assisted design and simulation</li>
+      <li>Rapid prototyping and iteration</li>
+      <li>Testing, validation, and documentation</li>
+    </ul>
+  </section>
+
+  <section id="why-us">
+    <h2>Why Choose Jozev Labs</h2>
+    <p>We combine engineering expertise with AI-driven analysis to accelerate design and ensure reliability. All computation and data remain local, ensuring your intellectual property never leaves the Netherlands.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:loodico@gmail.com">loodico@gmail.com</a></p>
+    <p>Phone: <a href="tel:+31619851260">+31 6 19851260</a></p>
+    <p>
+      <a href="#">LinkedIn</a> |
+      <a href="#">GitHub</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Jozev Labs – R&D and Prototyping in the Netherlands</p>
+  </footer>
 </body>
 </html>
