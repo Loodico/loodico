@@ -1,199 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ride JozEV – Luxury Electric Mobility</title>
-<style>
-    body {
-        margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background: #f7f7f5;
-        color: #222;
-    }
+    <title>Ride JozEV – Luxury Electric Mobility</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    header {
-        padding: 60px 20px;
-        text-align: center;
-        background: #ffffff;
-        border-bottom: 1px solid #e6e6e6;
-    }
+    <!-- Inline CSS mimicking HTML5UP Twenty -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+            background: #f7f7f7;
+            color: #444;
+            line-height: 1.65;
+        }
 
-    header img {
-        height: 90px;
-        margin-bottom: 18px;
-    }
+        h1, h2, h3 {
+            font-weight: 300;
+            color: #222;
+        }
 
-    header h1 {
-        font-size: 42px;
-        font-weight: 300;
-        margin: 10px 0;
-        letter-spacing: 1px;
-    }
+        strong {
+            font-weight: 600;
+        }
 
-    header p {
-        max-width: 600px;
-        margin: 0 auto;
-        opacity: 0.75;
-        font-size: 20px;
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 60px 20px;
-    }
+        /* Banner */
+        #banner {
+            padding: 8em 2em;
+            text-align: center;
+            background: #ffffff;
+        }
 
-    .hero img {
-        max-width: 460px;
-        border-radius: 10px;
-        box-shadow: 0 8px 28px rgba(0,0,0,0.15);
-    }
+        #banner img {
+            height: 110px;
+            margin-bottom: 20px;
+        }
 
-    .section {
-        padding: 80px 20px;
-        max-width: 900px;
-        margin: auto;
-        line-height: 1.6;
-    }
+        #banner h1 {
+            font-size: 3em;
+            margin: 0;
+        }
 
-    .section h2 {
-        font-size: 32px;
-        font-weight: 300;
-        margin-bottom: 20px;
-    }
+        #banner p {
+            font-size: 1.25em;
+            opacity: 0.7;
+            max-width: 620px;
+            margin: 1em auto 0 auto;
+        }
 
-    .section p {
-        opacity: 0.85;
-        font-size: 18px;
-    }
+        /* Hero Image */
+        .hero {
+            text-align: center;
+            padding: 4em 2em;
+        }
 
-    .gallery {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 40px 0;
-        flex-wrap: wrap;
-    }
+        .hero img {
+            max-width: 600px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
 
-    .gallery img {
-        width: 260px;
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-    }
+        /* Wrapper sections */
+        .wrapper {
+            padding: 5em 2em;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-    .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        margin-top: 40px;
-    }
+        .wrapper.special {
+            text-align: center;
+        }
 
-    .card {
-        padding: 30px;
-        background: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 3px 18px rgba(0,0,0,0.07);
-    }
+        /* Features grid */
+        .features {
+            display: grid;
+            gap: 40px;
+            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
 
-    .card h3 {
-        margin-top: 0;
-        font-weight: 400;
-    }
+        .feature {
+            background: #ffffff;
+            padding: 2.5em;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
 
-    .cta {
-        text-align: center;
-        padding: 60px 20px;
-        background: #ffffff;
-        border-top: 1px solid #e6e6e6;
-    }
+        .gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
 
-    .cta button {
-        padding: 16px 34px;
-        background: #222;
-        border: none;
-        color: white;
-        font-size: 18px;
-        border-radius: 8px;
-        cursor: pointer;
-        letter-spacing: 0.5px;
-    }
+        .gallery img {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+        }
 
-    .cta button:hover {
-        background: #444;
-    }
+        /* CTA */
+        .cta {
+            background: #ffffff;
+            padding: 5em 2em;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
 
-    footer {
-        text-align: center;
-        padding: 30px;
-        font-size: 14px;
-        opacity: 0.6;
-    }
-</style>
+        .cta button {
+            padding: 15px 40px;
+            background: #222;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+
+        .cta button:hover {
+            background: #444;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2em;
+            font-size: 0.9em;
+            opacity: 0.6;
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
+<!-- Banner -->
+<section id="banner">
     <img src="logo-1.png" alt="Ride JozEV Logo">
     <h1>Ride JozEV</h1>
-    <p>Luxury electric mobility crafted for travelers, cities, and planet-first progress.</p>
-</header>
-
-<section class="hero">
-    <img src="moped.jpeg" alt="JozEV Moped">
+    <p>Luxury electric mobility for modern cities, refined hotels, and a planet-first future.</p>
 </section>
 
-<section class="section">
+<!-- Hero -->
+<section class="hero">
+    <img src="jozev-hero.jpg" alt="Ride JozEV Moped">
+</section>
+
+<!-- Section: Luxury Calm -->
+<section class="wrapper special">
     <h2>A Calm New Standard for Electric Travel</h2>
     <p>
-        Ride JozEV blends handcrafted elegance with a future-focused hybrid EV platform.
-        Designed for hotels, resorts, and riders who value quiet luxury, it delivers a smooth,
-        effortless riding experience supported by a circular battery ecosystem built to reduce waste.
+        Ride JozEV blends minimal design, premium comfort, and a hybrid EV platform built for longevity.
+        Created for luxury hospitality and discerning riders, it delivers a smooth, quiet ride supported
+        by a circular battery ecosystem designed to eliminate waste.
     </p>
 
     <div class="gallery">
-        <img src="moped.side-view.jpg" alt="Side View">
-        <img src="jozev-black-version.jpg" alt="Black Edition">
-        <img src="moped.jpeg" alt="Hero Moped">
+        <img src="moped-side-view.jpg" alt="Side View">
+        <img src="jozev-black-version.jpg" alt="Black Version">
+        <img src="moped.jpeg" alt="Moped Hero">
     </div>
+</section>
+
+<!-- Features -->
+<section class="wrapper">
+    <h2>Technology, Sustainability & Experience</h2>
 
     <div class="features">
-        <div class="card">
+        <div class="feature">
             <h3>Hybrid EV Architecture</h3>
-            <p>Modular powertrain with extended-range battery options and high-efficiency performance.</p>
+            <p>Extended-range battery options, smooth acceleration, and modular electric design for maximum reliability.</p>
         </div>
 
-        <div class="card">
-            <h3>Circular Battery Program</h3>
-            <p>Second-life reuse, diagnostics, and end-of-life recovery that eliminate unnecessary waste.</p>
+        <div class="feature">
+            <h3>Circular Battery Ecosystem</h3>
+            <p>Battery second-life reuse, data-driven diagnostics, and responsible end-of-life processing.</p>
         </div>
 
-        <div class="card">
-            <h3>Micro-Charging Solutions</h3>
-            <p>Compact low-load charging racks ideal for hotels, resorts, and city partners.</p>
+        <div class="feature">
+            <h3>Micro-Charging Stations</h3>
+            <p>Low-grid-impact charging racks ideal for hotels, resorts, and sustainable tourism programs.</p>
         </div>
 
-        <div class="card">
-            <h3>Luxury Comfort</h3>
-            <p>Soft geometry, calm aesthetics, and ride feel made for premium hospitality fleets.</p>
+        <div class="feature">
+            <h3>Luxury Ride Feel</h3>
+            <p>Soft geometry, calm visual identity, and a premium riding experience tailored for hospitality fleets.</p>
         </div>
     </div>
 </section>
 
-<section class="section">
-    <h2>Built for B2B. Admired by Riders.</h2>
+<!-- B2B -->
+<section class="wrapper special">
+    <h2>Built for Hotels. Ready for Cities.</h2>
     <p>
-        JozEV integrates naturally into sustainable tourism programs, hospitality mobility offerings,
-        and forward-thinking municipalities. Pre-order opportunities are open for organizations ready
-        to lead Europe’s shift toward quiet, circular mobility.
+        Designed for premium hospitality, tourism operators, and forward-thinking municipalities.
+        Pre-order invitations are open for partners ready to lead Europe’s next wave of circular mobility.
     </p>
 </section>
 
+<!-- CTA -->
 <section class="cta">
     <button>Request Pilot Program Info</button>
 </section>
 
+<!-- Footer -->
 <footer>
     © Ride JozEV. Designed for a cleaner, calmer future.
 </footer>
