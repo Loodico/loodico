@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Casting Profile</title>
+<title>Gaby — Casting Profile</title>
 <meta name="robots" content="noindex, nofollow">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600&display=swap');
@@ -111,6 +111,19 @@
     display:block; margin-top:8px; font-size:12px; letter-spacing:0.04em;
     color:var(--gold); font-family:'Work Sans',sans-serif;
   }
+
+  /* Real photos: fill the frame; placeholder text only shows if the file fails to load */
+  .hero-photo img, .ph img{
+    width:100%; height:100%;
+    object-fit:cover;
+    border-radius:6px;
+    display:block;
+  }
+  .ph{position:relative;}
+  .ph img{position:absolute; inset:0; border-radius:4px;}
+  .hero-photo .placeholder, .ph .placeholder{display:none;}
+  .hero-photo.no-image .placeholder, .ph.no-image .placeholder{display:block; position:relative;}
+  .hero-photo.no-image img, .ph.no-image img{display:none;}
 
   /* ---------- SECTION HEADERS ---------- */
   section{padding:72px 0; border-top:1px solid var(--line);}
@@ -302,11 +315,13 @@
         <div class="stat"><span class="num">NL</span><span class="label">Travel (school-approved)</span></div>
       </div>
     </div>
-    <div class="hero-photo">
+    <div class="hero-photo" id="hero-photo">
+      <img src="images/headshot.jpg" alt="Gaby headshot"
+           onerror="this.closest('.hero-photo').classList.add('no-image')">
       <div class="placeholder">
         <span class="icon">&#9679;</span>
         Headshot
-        <span class="fname">images/Close-up.png</span>
+        <span class="fname">missing: images/headshot.jpg</span>
       </div>
     </div>
   </div>
@@ -358,12 +373,12 @@
       <h2>Gallery</h2>
     </div>
     <div class="gallery-grid">
-      <div class="ph"><div class="placeholder"><span class="icon">&#9679;</span>Photo 1<span class="fname">images/photo1.jpg</span></div></div>
-      <div class="ph"><div class="placeholder"><span class="icon">&#9679;</span>Photo 2<span class="fname">images/photo2.jpg</span></div></div>
-      <div class="ph"><div class="placeholder"><span class="icon">&#9679;</span>Photo 3<span class="fname">images/photo3.jpg</span></div></div>
-      <div class="ph"><div class="placeholder"><span class="icon">&#9679;</span>Photo 4<span class="fname">images/photo4.jpg</span></div></div>
-      <div class="ph"><div class="placeholder"><span class="icon">&#9679;</span>Photo 5<span class="fname">images/photo5.jpg</span></div></div>
-      <div class="ph"><div class="placeholder"><span class="icon">&#9679;</span>Photo 6<span class="fname">images/photo6.jpg</span></div></div>
+      <div class="ph"><img src="images/photo1.jpg" alt="Gaby photo 1" onerror="this.closest('.ph').classList.add('no-image')"><div class="placeholder"><span class="icon">&#9679;</span>Photo 1<span class="fname">missing: images/photo1.jpg</span></div></div>
+      <div class="ph"><img src="images/photo2.jpg" alt="Gaby photo 2" onerror="this.closest('.ph').classList.add('no-image')"><div class="placeholder"><span class="icon">&#9679;</span>Photo 2<span class="fname">missing: images/photo2.jpg</span></div></div>
+      <div class="ph"><img src="images/photo3.jpg" alt="Gaby photo 3" onerror="this.closest('.ph').classList.add('no-image')"><div class="placeholder"><span class="icon">&#9679;</span>Photo 3<span class="fname">missing: images/photo3.jpg</span></div></div>
+      <div class="ph"><img src="images/photo4.jpg" alt="Gaby photo 4" onerror="this.closest('.ph').classList.add('no-image')"><div class="placeholder"><span class="icon">&#9679;</span>Photo 4<span class="fname">missing: images/photo4.jpg</span></div></div>
+      <div class="ph"><img src="images/photo5.jpg" alt="Gaby photo 5" onerror="this.closest('.ph').classList.add('no-image')"><div class="placeholder"><span class="icon">&#9679;</span>Photo 5<span class="fname">missing: images/photo5.jpg</span></div></div>
+      <div class="ph"><img src="images/photo6.jpg" alt="Gaby photo 6" onerror="this.closest('.ph').classList.add('no-image')"><div class="placeholder"><span class="icon">&#9679;</span>Photo 6<span class="fname">missing: images/photo6.jpg</span></div></div>
     </div>
   </div>
 </section>
@@ -418,7 +433,18 @@
 </div><!-- /#site -->
 
 <script>
-  
+  // ---- Password gate ----
+  // This is a light deterrent only, NOT real security. Anyone who views the
+  // page source can see the hash below, and anyone with a direct link to a
+  // file in images/ or videos/ can open it directly regardless of this gate.
+  // Real protection requires server-side access control (see note from Claude).
+
+  // SHA-256 hash of the access code. To set your own password:
+  // 1. Pick a code, e.g. "sunflower42"
+  // 2. In a browser console run:
+  //    crypto.subtle.digest('SHA-256', new TextEncoder().encode('sunflower42'))
+  //      .then(b => console.log(Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')))
+  // 3. Paste the resulting hex string below.
   const PASSWORD_HASH = "2dd8827eeaeea34a43ea365e118d5b23915aad291d02a9e5b3d80acaf424b2af";
   const SESSION_KEY = "gaby-gate-unlocked";
 
