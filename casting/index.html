@@ -194,6 +194,64 @@
 
   footer{padding:32px 0 48px; text-align:center; color:rgba(245,241,232,0.4); font-size:13px;}
 
+  /* ---------- PASSWORD GATE ---------- */
+  #gate{
+    position:fixed; inset:0; z-index:999;
+    background:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    padding:24px;
+  }
+  #gate::before{
+    content:"";
+    position:absolute; top:-20%; left:50%;
+    width:700px; height:700px;
+    transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(212,175,106,0.14) 0%, rgba(212,175,106,0) 60%);
+    pointer-events:none;
+  }
+  .gate-box{
+    position:relative;
+    width:100%; max-width:360px;
+    text-align:center;
+  }
+  .gate-box .brand{font-size:22px; margin-bottom:6px;}
+  .gate-box p{color:rgba(245,241,232,0.6); font-size:14px; margin-bottom:28px;}
+  .gate-box input{
+    width:100%;
+    background:var(--plum);
+    border:1px solid var(--line);
+    color:var(--ivory);
+    padding:14px 16px;
+    border-radius:6px;
+    font-size:15px;
+    font-family:'Work Sans',sans-serif;
+    margin-bottom:14px;
+    text-align:center;
+    letter-spacing:0.05em;
+  }
+  .gate-box input:focus{outline:none; border-color:var(--gold);}
+  .gate-box button{
+    width:100%;
+    background:var(--gold);
+    color:var(--ink);
+    font-weight:600;
+    padding:14px;
+    border:none;
+    border-radius:6px;
+    font-size:14px;
+    letter-spacing:0.03em;
+    cursor:pointer;
+    font-family:'Work Sans',sans-serif;
+  }
+  .gate-box .err{
+    color:var(--blush);
+    font-size:13px;
+    margin-top:12px;
+    min-height:18px;
+  }
+  #site{display:none;}
+  #site.unlocked{display:block;}
+
   @media (max-width:820px){
     .hero-grid{grid-template-columns:1fr;}
     .hero-photo{order:-1; max-width:340px; margin:0 auto;}
@@ -206,6 +264,18 @@
 </style>
 </head>
 <body>
+
+<div id="gate">
+  <div class="gate-box">
+    <div class="brand">GABY<span style="color:var(--gold)">.</span></div>
+    <p>This casting profile is password protected.<br>Please enter the access code you were given.</p>
+    <input type="password" id="gate-input" placeholder="Access code" autocomplete="off">
+    <button id="gate-btn">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="site">
 
 <nav>
   <div class="wrap">
@@ -344,6 +414,48 @@
 <footer>
   Casting profile &middot; Gaby &middot; Amsterdam, NL
 </footer>
+
+</div><!-- /#site -->
+
+<script>
+  
+  const PASSWORD_HASH = "2dd8827eeaeea34a43ea365e118d5b23915aad291d02a9e5b3d80acaf424b2af";
+  const SESSION_KEY = "gaby-gate-unlocked";
+
+  async function sha256Hex(text) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function unlock() {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('site').classList.add('unlocked');
+  }
+
+  // Stay unlocked for the rest of this browser tab session
+  if (sessionStorage.getItem(SESSION_KEY) === '1') {
+    unlock();
+  }
+
+  document.getElementById('gate-btn').addEventListener('click', tryUnlock);
+  document.getElementById('gate-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') tryUnlock();
+  });
+
+  async function tryUnlock() {
+    const input = document.getElementById('gate-input');
+    const err = document.getElementById('gate-err');
+    const hash = await sha256Hex(input.value);
+    if (hash === PASSWORD_HASH) {
+      sessionStorage.setItem(SESSION_KEY, '1');
+      unlock();
+    } else {
+      err.textContent = "That code doesn't match. Try again.";
+      input.value = '';
+      input.focus();
+    }
+  }
+</script>
 
 </body>
 </html>
